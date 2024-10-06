@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div *ngIf="visits && visits.length > 0" class="table-container">
+        <h2>List of Visits</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Start Date Time</th>
+              <th>End Date Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let visit of visits">
+              <td>{{ visit.startDateTime }}</td>
+              <td>{{ visit.endDateTime }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div *ngIf="!visits || visits.length === 0" class="no-visits-message">
+        <p>No visits available.</p>
+      </div>
+    </div>
+  </div>
+</div>
